@@ -56,7 +56,7 @@ npm install &>> $LOGFILE
 VALIDATE $? " Installing dependencies NPM"
 
 #Give full path of catalouge.service because we are inside /app folder
-cp /home/centos/roboshop-shell/catalouge.service /etc/systemd/system/catalogue.service &>> $LOGFILE
+cp /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
 VALIDATE $? " Copying Catalouge.service" 
 
 systemctl daemon-reload &>> $LOGFILE
