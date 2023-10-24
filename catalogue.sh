@@ -41,13 +41,13 @@ useradd roboshop &>> $LOGFILE
 mkdir /app &>> $LOGFILE
 
 curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>> $LOGFILE
-VALIDATE $? " Downloading Catalouge artifact"
+VALIDATE $? " Downloading catalogue artifact"
 
 cd /app &>> $LOGFILE
 VALIDATE $? "Moving into app directory"
 
 unzip /tmp/catalogue.zip &>> $LOGFILE
-VALIDATE $? "   Unzipping catalouge"
+VALIDATE $? "   Unzipping catalogue"
 
 cd /app &>> $LOGFILE
 VALIDATE $? " Moving into app directory"
@@ -55,18 +55,18 @@ VALIDATE $? " Moving into app directory"
 npm install &>> $LOGFILE
 VALIDATE $? " Installing dependencies NPM"
 
-#Give full path of catalouge.service because we are inside /app folder
+#Give full path of catalogue.service because we are inside /app folder
 cp /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
-VALIDATE $? " Copying Catalouge.service" 
+VALIDATE $? " Copying catalogue.service" 
 
 systemctl daemon-reload &>> $LOGFILE
 VALIDATE $? " Daemon-Reloading"
 
 systemctl enable catalogue &>> $LOGFILE
-VALIDATE $? " Enabling Catalouge"
+VALIDATE $? " Enabling catalogue"
 
 systemctl start catalogue &>> $LOGFILE
-VALIDATE $? " Starting Catalouge "
+VALIDATE $? " Starting catalogue "
 
 cp /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 VALIDATE $? " Copying MongoDB.repo"
@@ -75,5 +75,5 @@ yum install mongodb-org-shell -y &>> $LOGFILE
 VALIDATE $? " Installing MongoDB Client Org-Shell"
 
 mongo --host mongodb.devopsuday.online </app/schema/catalogue.js &>> $LOGFILE
-VALIDATE $? " Loading Schema Catalouge data into mongodb "
+VALIDATE $? " Loading Schema catalogue data into mongodb "
 
