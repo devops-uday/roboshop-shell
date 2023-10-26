@@ -45,7 +45,7 @@ cd /usr/share/nginx/html &>>$LOGFILE
 VALIDATE $? " moving into html folder"
 
 unzip /tmp/web.zip &>>$LOGFILE
-VALIDATE$? " unzipping html file"
+VALIDATE $? " unzipping html file"
 
 cp /home/centos/roboshop-shell/roboshop.conf /etc/nginx/default.d/roboshop.conf  &>>$LOGFILE 
 VALIDATE $? " copying roboshop.conf"
