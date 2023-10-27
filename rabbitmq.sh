@@ -30,7 +30,7 @@ curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.
 VALIDATE $? " congiguring repos from vendors "
 
 curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash &>>$LOGFILE
-VALIDATE $? " " configuring repos for rabbitmq "
+VALIDATE $? " configuring repos for rabbitmq "
 
 yum install rabbitmq-server -y  &>>$LOGFILE
 VALIDATE $? " installing rabbitmq "
