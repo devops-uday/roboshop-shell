@@ -43,7 +43,7 @@ unzip /tmp/payment.zip &>>$LOGFILE
 VALIDATE $? " unzipping payment arifact "
 
 cd /app &>>$LOGFILE
-VALIDATE $? " chanining into app directory "
+VALIDATE $? " chaniging into app directory "
  
 pip3.6 install -r requirements.txt &>>$LOGFILE
 VALIDATE $? " installing dependencies "

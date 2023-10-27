@@ -74,6 +74,6 @@ VALIDATE $? " Copying MongoDB.repo"
 yum install mongodb-org-shell -y &>> $LOGFILE
 VALIDATE $? " Installing MongoDB Client Org-Shell"
 
-mongo --host mongodb.devopsuday.online </app/schema/user.js &>> $LOGFILE
+mongo --host 172.31.20.201 </app/schema/user.js &>> $LOGFILE
 VALIDATE $? " Loading Schema user data into mongodb "
 

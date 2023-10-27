@@ -74,6 +74,6 @@ VALIDATE $? " Copying MongoDB.repo"
 yum install mongodb-org-shell -y &>> $LOGFILE
 VALIDATE $? " Installing MongoDB Client Org-Shell"
 
-mongo --host mongodb.devopsuday.online </app/schema/catalogue.js &>> $LOGFILE
+mongo --host 172.31.20.201 </app/schema/catalogue.js &>> $LOGFILE
 VALIDATE $? " Loading Schema catalogue data into mongodb "
 
