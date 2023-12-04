@@ -1,10 +1,4 @@
-#!/bin/bash
-
-USERID=$(id -u)
-DATE=$(date +%F)
-LOGSDIR=/tmp
-SCRIPT_NAME=$0
-LOGFILE=$LOGSDIR/$0-$DATE.log
+/$0-$DATE.log
 
 R="\e[31m"
 G="\e[32m"
@@ -17,23 +11,7 @@ then
     exit 1
 fi
 VALIDATE(){
-    if [ $1 -ne 0 ]
-    then 
-        echo -e " $2....$R FAILURE $N"
-        exit 1
-    else 
-        echo -e "  $2.....$G SUCCESS $N"
-    fi
-}
-
-yum install nginx -y &>>$LOGFILE
-VALIDATE $? " installing nginx"
-
-systemctl enable nginx &>>$LOGFILE
-VALIDATE $? " enabling nginx "
-
-systemctl start nginx &>>$LOGFILE
-VALIDATE $? " starting nginx "
+    if [ $1 -ne 0 
 
 rm -rf /usr/share/nginx/html/* &>>$LOGFILE
 VALIDATE $? " removing default html file"
@@ -47,8 +25,4 @@ VALIDATE $? " moving into html folder"
 unzip /tmp/web.zip &>>$LOGFILE
 VALIDATE $? " unzipping html file"
 
-cp /home/centos/roboshop-shell/roboshop.conf /etc/nginx/default.d/roboshop.conf  &>>$LOGFILE 
-VALIDATE $? " copying roboshop.conf"
-
-systemctl restart nginx  &>>$LOGFILE
-VALIDATE $? " restarting nginx"
+cp /h
