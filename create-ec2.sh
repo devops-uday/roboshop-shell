@@ -11,10 +11,10 @@ SECURITY_GROUP_ID=sg-017e1df2e846425e8
 for i in "${NAMES[@]}"
 do 
    if [[ $i == "mongoDB" || $i == "MySQL" ]]
-   then
-    INSTANCE_TYPE="t3.medium"
-   else
-    INSTANCE_TYPE="t2.micro"
+         then
+             INSTANCE_TYPE="t3.medium"
+         else
+             INSTANCE_TYPE="t2.micro"
     fi
     echo " creating $i instance"
     aws ec2 run-instances --image-id $IMAGE_ID --instance-type $INSTANCE_TYPE --security-group-ids $SECURITY_GROUP_ID "ResourceType=intance,Tags=[{Key=Name,Value$i}]"
