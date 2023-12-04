@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#creating and finding Ip Addresses of the created instances using jq(jason queary)
 
 NAMES=("mongoDB" "Reddis" "MySQL" "RabbitMQ" "Catalouge" "User" "cart" "Shipping" "Payment" "Dispatch" "Web")
 INSTANCE_TYPE=""
