@@ -13,7 +13,7 @@ HOSTEDZONE_ID=Z02943602NKXCFJ0Y6WXB
 
 for i in $@
 do 
-   if [[ $i == "mongoDB" || $i == "MySQL" ]]
+   if [[ $i == "mongodb" || $i == "mysql" ]]
          then
              INSTANCE_TYPE="t3.medium"
          else
