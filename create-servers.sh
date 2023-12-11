@@ -7,6 +7,7 @@ INSTANCE_TYPE=""
 IMAGE_ID=ami-03265a0778a880afb
 SECURITY_GROUP_ID=sg-017e1df2e846425e8
 DOMAIN_NAME=devopsuday.online
+HOSTEDZONE_ID=Z02943602NKXCFJ0Y6WXB
 
 #for mysql or mongodb intance_type should be t3.medium and rest of the instances t2.micro
 
@@ -22,7 +23,7 @@ do
     IP_ADDRESS=$(aws ec2 run-instances --image-id $IMAGE_ID --instance-type $INSTANCE_TYPE --security-group-ids $SECURITY_GROUP_ID --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" | jq -r '.Instances[0].PrivateIpAddress')
     echo " created instance $i PRIVATE IP ADDRESS is $IP_ADDRESS" 
 
-    aws route53 change-resource-record-sets --hosted-zone-id Z0575256LLP21Z4NFHU7 --change-batch '
+    aws route53 change-resource-record-sets --hosted-zone-id $HOSTEDZONE_ID --change-batch '
     {
             "Changes": [{
             "Action": "CREATE",
