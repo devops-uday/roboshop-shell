@@ -7,7 +7,7 @@ INSTANCE_TYPE=""
 IMAGE_ID=ami-03265a0778a880afb
 SECURITY_GROUP_ID=sg-017e1df2e846425e8
 DOMAIN_NAME=devopsuday.online
-HOSTEDZONE_ID=Z02943602NKXCFJ0Y6WXB
+HOSTEDZONE_ID=ZZ03990411I0C649QQKWA1
 
 #for mysql or mongodb intance_type should be t3.medium and rest of the instances t2.micro
 
